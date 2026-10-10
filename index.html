@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MathWithWalee — think smarter, solve faster. Practice math quizzes, challenges, times tables and videos.">
+  <title>MathWithWalee | Think Smarter. Solve Faster.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="MathWithWalee home">
+      <span class="brand-mark">∑</span><span>Math<span class="green">With</span><span class="blue">Walee</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav" aria-label="Main navigation">
+      <a href="#videos">Videos</a><a href="#quiz">Quizzes</a><a href="#challenges">Challenges</a><a href="#tables">Times Tables</a>
+    </nav>
+    <a class="header-cta" href="#quiz">Start a quiz <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> YOUR DAILY MATH WORKOUT</div>
+        <h1>THINK SMARTER.<br><span class="gradient-text">SOLVE FASTER.</span></h1>
+        <p>Challenge your brain. Test your skills. Become a math master — one question at a time.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#quiz">Play a math quiz <span>→</span></a><a class="btn btn-ghost" href="#videos">Watch videos <span>▶</span></a></div>
+        <div class="hero-stats"><div><strong>4</strong><span>ways to practise</span></div><div><strong>∞</strong><span>ways to improve</span></div><div><strong>1</strong><span>question at a time</span></div></div>
+      </div>
+      <div class="hero-art" aria-label="Decorative math symbols">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="floating-symbol plus">+</div><div class="floating-symbol divide">÷</div><div class="floating-symbol multiply">×</div>
+        <div class="equation-card"><span class="mini-label">QUICK BRAIN TEASER</span><div class="equation">7 × 8 <span>=</span> <b>?</b></div><div class="answer-slots"><i></i><i></i><i></i></div><span class="card-foot">YOUR TURN TO SOLVE</span></div>
+        <div class="art-dot dot-a"></div><div class="art-dot dot-b"></div><div class="art-dot dot-c"></div>
+      </div>
+      <div class="hero-bottom-line"><span></span> SMALL STEPS. BIG BRAIN POWER. <span></span></div>
+    </section>
+
+    <section class="section-wrap explore" id="explore">
+      <div class="section-heading"><div><div class="eyebrow">PICK YOUR NEXT MOVE</div><h2>Make every minute <span class="green">count.</span></h2></div><p>Choose a path and get practising. No pressure — just progress.</p></div>
+      <div class="feature-grid">
+        <a class="feature-card feature-video" href="#videos"><div class="feature-icon">▶</div><div class="feature-number">01 / WATCH</div><h3>Math Videos</h3><p>Learn methods step by step with MathWithWalee.</p><span class="card-link">Explore videos <b>↗</b></span></a>
+        <a class="feature-card feature-quiz" href="#quiz"><div class="feature-icon">?</div><div class="feature-number">02 / TEST</div><h3>Interactive Quizzes</h3><p>Pick an answer, check your result, and sharpen your skills.</p><span class="card-link">Take a quiz <b>↗</b></span></a>
+        <a class="feature-card feature-challenge" href="#challenges"><div class="feature-icon">⚡</div><div class="feature-number">03 / CHALLENGE</div><h3>Math Challenges</h3><p>Try quick brain teasers and see if you can beat the clock.</p><span class="card-link">Get challenged <b>↗</b></span></a>
+        <a class="feature-card feature-tables" href="#tables"><div class="feature-icon">×</div><div class="feature-number">04 / PRACTISE</div><h3>Times Tables</h3><p>Choose a table and practise multiplication facts.</p><span class="card-link">Practise tables <b>↗</b></span></a>
+      </div>
+    </section>
+
+    <section class="dark-band" id="videos">
+      <div class="section-wrap video-section">
+        <div class="section-heading"><div><div class="eyebrow"><span class="red-dot"></span> LEARN WITH THE CHANNEL</div><h2>Watch. Learn. <span class="blue">Level up.</span></h2></div><p>Connect your YouTube videos here so visitors can watch them without hunting around.</p></div>
+        <div class="video-panel">
+          <div class="video-placeholder"><div class="play-button">▶</div><span>YOUR LATEST MATH VIDEO</span><small>Replace this with your YouTube video link</small></div>
+          <div class="video-info"><span class="tag">MATHWITHWALEE</span><h3>New math challenge coming up?</h3><p>Add your YouTube video ID in <code>script.js</code> to show a real video here. Your website is ready for your channel link.</p><a class="btn btn-primary" id="youtubeLink" href="https://www.youtube.com/" target="_blank" rel="noopener">Visit YouTube channel ↗</a></div>
+        </div>
+        <div class="helper-note">Tip: Replace <code>YOUR_CHANNEL_URL</code> in <code>script.js</code> with your actual channel URL.</div>
+      </div>
+    </section>
+
+    <section class="section-wrap quiz-section" id="quiz">
+      <div class="section-heading"><div><div class="eyebrow">READY, SET, SOLVE</div><h2>Quick-fire <span class="green">quiz.</span></h2></div><p>Choose the correct answer. Your score updates as you go.</p></div>
+      <div class="quiz-layout">
+        <div class="quiz-card">
+          <div class="quiz-top"><span class="tag">MIXED MATH</span><span id="questionCounter">QUESTION 1 / 5</span></div>
+          <div class="progress-track"><div id="progressBar"></div></div>
+          <h3 id="questionText">What is 24 + 19?</h3>
+          <div class="answer-grid" id="answerOptions"></div>
+          <div class="quiz-feedback" id="quizFeedback" aria-live="polite">Choose an answer to begin.</div>
+          <div class="quiz-controls"><button class="btn btn-ghost" id="restartQuiz">↻ Restart</button><button class="btn btn-primary" id="nextQuestion" disabled>Next question →</button></div>
+        </div>
+        <aside class="score-card"><div class="score-symbol">✳</div><span class="mini-label">YOUR SCORE</span><div class="score-number"><span id="scoreValue">0</span><small> / 5</small></div><p id="scoreMessage">Every question is a chance to learn.</p><div class="score-rule"></div><div class="score-tip"><b>Walee's tip</b><p>Take your time, check the operation, and trust your working.</p></div></aside>
+      </div>
+    </section>
+
+    <section class="challenge-section" id="challenges">
+      <div class="section-wrap">
+        <div class="section-heading"><div><div class="eyebrow">THE DAILY BRAIN BOOST</div><h2>Can you crack <span class="red">this?</span></h2></div><p>One question. One answer. Have a go before revealing the solution.</p></div>
+        <div class="challenge-box"><div class="challenge-badge">DAILY CHALLENGE <span>⚡</span></div><div class="challenge-question">I am a number. Double me and add 6 to get 20. <br><strong>What number am I?</strong></div><div class="challenge-actions"><input id="challengeAnswer" type="number" inputmode="numeric" placeholder="Your answer" aria-label="Your answer"><button class="btn btn-primary" id="checkChallenge">Check answer</button><button class="btn btn-ghost" id="revealChallenge">Reveal answer</button></div><p id="challengeFeedback" class="challenge-feedback" aria-live="polite"></p></div>
+      </div>
+    </section>
+
+    <section class="section-wrap tables-section" id="tables">
+      <div class="section-heading"><div><div class="eyebrow">BUILD YOUR NUMBER POWER</div><h2>Times tables, <span class="blue">your way.</span></h2></div><p>Choose a number from 2 to 15 to display its multiplication table.</p></div>
+      <div class="tables-tool"><label for="tableSelect">Choose a table</label><select id="tableSelect"></select><button class="btn btn-primary" id="showTable">Show table ↗</button><button class="btn btn-ghost" id="randomTable">Surprise me</button></div>
+      <div class="table-results" id="tableResults" aria-live="polite"></div>
+    </section>
+
+    <section class="final-cta"><div class="section-wrap cta-inner"><div><div class="eyebrow">KEEP YOUR BRAIN IN MOTION</div><h2>One more question?<br><span class="green">You've got this.</span></h2></div><a class="btn btn-primary" href="#quiz">Try the quiz again ↑</a></div></section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">∑</span><span>Math<span class="green">With</span><span class="blue">Walee</span></span></a><p>Think smarter. Solve faster. Keep learning.</p><div class="footer-links"><a href="#videos">Videos</a><a href="#quiz">Quizzes</a><a href="#challenges">Challenges</a><a href="#tables">Times Tables</a></div><small>© <span id="year"></span> MathWithWalee · Made for curious minds.</small></footer>
+  <script src="script.js"></script>
+</body>
+</html>
