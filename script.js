@@ -1,7 +1,7 @@
 // MathWithWalee website settings
 // Replace YOUR_CHANNEL_URL with your actual YouTube channel URL.
 // Optional: replace FEATURED_VIDEO_ID with a YouTube video ID to embed a video.
-const YOUR_CHANNEL_URL = "https://www.youtube.com/";
+const YOUR_CHANNEL_URL = "https://www.youtube.com/@MathWithWalee-ev3";
 const FEATURED_VIDEO_ID = ""; // Example: "dQw4w9WgXcQ"
 
 document.getElementById("year").textContent = new Date().getFullYear();
