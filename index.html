@@ -137,6 +137,44 @@
       <div class="table-results" id="tableResults" aria-live="polite"></div>
     </section>
 
+    
+<!-- NEW SECTION: Practice More Questions -->
+<section class="practice-more" id="practice-more">
+  <div class="practice-heading">
+    <span class="practice-label">MATHWITHWALEE PRACTICE</span>
+    <h2>Practice More Questions</h2>
+    <p>Keep practising. Generate new questions and improve your maths skills!</p>
+  </div>
+
+  <div class="practice-card">
+    <label for="practiceTopic">Choose a topic</label>
+    <select id="practiceTopic">
+      <option value="mixed">Mixed Maths</option>
+      <option value="addition">Addition</option>
+      <option value="subtraction">Subtraction</option>
+      <option value="multiplication">Multiplication</option>
+      <option value="division">Division</option>
+    </select>
+
+    <label for="practiceDifficulty">Choose difficulty</label>
+    <select id="practiceDifficulty">
+      <option value="easy">Easy</option>
+      <option value="medium" selected>Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+
+    <button type="button" id="generatePractice">
+      Generate New Questions ↻
+    </button>
+
+    <div id="practiceQuestions"></div>
+
+    <p id="practiceScore" aria-live="polite">
+      Answer the questions to earn points!
+    </p>
+  </div>
+</section>
+
     <section class="final-cta"><div class="section-wrap cta-inner"><div><div class="eyebrow">KEEP YOUR BRAIN IN MOTION</div><h2>One more question?<br><span class="green">You've got this.</span></h2></div><a class="btn btn-primary" href="#quiz">Try the quiz again ↑</a></div></section>
   </main>
   <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">∑</span><span>Math<span class="green">With</span><span class="blue">Walee</span></span></a><p>Think smarter. Solve faster. Keep learning.</p><div class="footer-links"><a href="#videos">Videos</a><a href="#quiz">Quizzes</a><a href="#challenges">Challenges</a><a href="#tables">Times Tables</a></div><small>© <span id="year"></span> MathWithWalee · Made for curious minds.</small></footer>
