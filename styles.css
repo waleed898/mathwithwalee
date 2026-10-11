@@ -13,110 +13,38 @@
 
 
 
-/* MathWithWalee — Dark Navy, Green & Blue Theme */
 
-:root {
-  --background: #06101f;
-  --card-background: #0e1d30;
-  --green: #2ee6a0;
-  --blue: #58b8f7;
-  --text: #f4f7ff;
-  --muted-text: #a9c2e8;
-  --border: #26364a;
-}
+/* Match MathWithWalee challenge cards to the website */
 
-/* Main section backgrounds */
-body {
-  background-color: var(--background);
-  color: var(--text);
-}
-
-.subscribe-section,
-.premium-section {
-  background: var(--background);
-  color: var(--text);
-  max-width: 1000px;
-  margin: 35px auto;
-  padding: 30px 20px;
-  text-align: center;
-}
-
-/* Subscribe button — bright green */
-.subscribe-btn {
-  display: inline-block;
-  padding: 13px 24px;
-  margin: 12px 0;
-  border-radius: 9px;
-  background: var(--green);
-  color: #06101f;
-  font-weight: 800;
-  text-decoration: none;
-  border: 1px solid var(--green);
-  transition: 0.2s ease;
-}
-
-.subscribe-btn:hover {
-  background: #20d995;
-  transform: translateY(-2px);
-}
-
-/* Challenge card — deep navy */
-.premium-card {
-  max-width: 520px;
-  margin: 20px auto;
-  padding: 24px;
-  border: 1px solid var(--border);
+.premium-card,
+.premium-section .premium-card,
+.subscribe-section .premium-card {
+  background: #0e1d30 !important;
+  color: #f4f7ff !important;
+  border: 1px solid #26364a !important;
   border-radius: 16px;
-  background: linear-gradient(145deg, #12243a, #0b1728);
-  color: var(--text);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.premium-card h3 {
-  color: var(--green);
+.premium-card h2,
+.premium-card h3,
+.premium-card p {
+  color: #f4f7ff !important;
 }
 
-.math-question {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--blue);
+.premium-card .math-question {
+  color: #58b8f7 !important;
 }
 
-/* Challenge button — green */
-.challenge-btn {
-  padding: 11px 18px;
-  border: none;
-  border-radius: 9px;
-  background: var(--green);
-  color: #06101f;
-  font-weight: 800;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.challenge-btn:hover {
-  background: #20d995;
-}
-
-/* Coming soon label */
-.coming-soon {
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: #102b34;
-  color: var(--green);
+.premium-card .coming-soon {
+  background: #102b34 !important;
+  color: #2ee6a0 !important;
   border: 1px solid #17483f;
-  font-weight: 700;
-  font-size: 12px;
 }
 
-@media (max-width: 600px) {
-  .subscribe-section,
-  .premium-section {
-    padding: 24px 14px;
-  }
-
-  .premium-card {
-    padding: 18px;
-  }
+.premium-card button,
+.premium-card .challenge-btn {
+  background: #2ee6a0 !important;
+  color: #06101f !important;
+  border: none;
 }
