@@ -15,10 +15,10 @@
 
 
 /* Match MathWithWalee challenge cards to the website */
-
-.premium-card,
-.premium-section .premium-card,
-.subscribe-section .premium-card {
+  
+ .premium-card,
+ .premium-section .premium-card,
+ .subscribe-section .premium-card {
   background: #0e1d30 !important;
   color: #f4f7ff !important;
   border: 1px solid #26364a !important;
@@ -26,24 +26,24 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.premium-card h2,
-.premium-card h3,
-.premium-card p {
+ .premium-card h2,
+ .premium-card h3,
+ .premium-card p {
   color: #f4f7ff !important;
 }
 
-.premium-card .math-question {
+ .premium-card .math-question {
   color: #58b8f7 !important;
 }
 
-.premium-card .coming-soon {
+ .premium-card .coming-soon {
   background: #102b34 !important;
   color: #2ee6a0 !important;
   border: 1px solid #17483f;
 }
 
-.premium-card button,
-.premium-card .challenge-btn {
+ .premium-card button,
+ .premium-card .challenge-btn {
   background: #2ee6a0 !important;
   color: #06101f !important;
   border: none;
