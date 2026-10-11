@@ -6,7 +6,7 @@ const FEATURED_VIDEO_ID = ""; "XbKc4or8bNY";
 
 document.getElementById("year").textContent = new Date().getFullYear();
 const youtubeLink = document.getElementById("youtubeLink");
-youtubeLink.href = YOUR_CHANNEL_URL;https://www.youtube.com/@MathWithWalee-ev3
+youtubeLink.href = YOUR_CHANNEL_URL;https:"https://www.youtube.com/@MathWithWalee-ev3";
 
 if (FEATURED_VIDEO_ID.trim()) {
   const placeholder = document.querySelector(".video-placeholder");
