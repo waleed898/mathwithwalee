@@ -140,3 +140,45 @@
   color: #2ee6a0;
   font-weight: 700;
 }
+
+/* Fix: Center Math with Premium Challenges */
+
+.premium-section {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 30px 20px;
+  float: none;
+  position: relative;
+  left: auto;
+  right: auto;
+}
+
+.premium-section .premium-card {
+  width: 100%;
+  max-width: 520px;
+  box-sizing: border-box;
+  margin: 20px auto !important;
+  float: none;
+  position: relative;
+  left: auto;
+  right: auto;
+}
+
+.premium-section h2,
+.premium-section > p {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .premium-section {
+    padding: 24px 14px;
+  }
+
+  .premium-section .premium-card {
+    max-width: 100%;
+  }
+}
