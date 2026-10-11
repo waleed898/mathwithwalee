@@ -162,3 +162,124 @@ document.getElementById("randomTable").addEventListener("click", () => {
   showTable();
 });
 showTable();
+
+/* NEW FEATURE: Practice More Questions */
+
+const practiceTopic = document.getElementById("practiceTopic");
+const practiceDifficulty = document.getElementById("practiceDifficulty");
+const generatePractice = document.getElementById("generatePractice");
+const practiceQuestions = document.getElementById("practiceQuestions");
+const practiceScore = document.getElementById("practiceScore");
+
+let practiceItems = [];
+let practiceCorrect = 0;
+let practiceAnswered = 0;
+
+function makePracticeQuestions() {
+  const selectedTopic = practiceTopic.value;
+  const difficulty = practiceDifficulty.value;
+  const operations = selectedTopic === "mixed"
+    ? ["addition", "subtraction", "multiplication", "division"]
+    : [selectedTopic];
+
+  const min = difficulty === "easy" ? 1 : difficulty === "medium" ? 10 : 100;
+  const max = difficulty === "easy" ? 12 : difficulty === "medium" ? 99 : 999;
+
+  practiceItems = Array.from({ length: 5 }, () => {
+    const op = operations[Math.floor(Math.random() * operations.length)];
+    let a = Math.floor(Math.random() * (max - min + 1)) + min;
+    let b = Math.floor(Math.random() * (difficulty === "easy" ? 10 : difficulty === "medium" ? 30 : 100)) + 1;
+    let symbol, answer;
+
+    if (op === "addition") {
+      symbol = "+";
+      answer = a + b;
+    } else if (op === "subtraction") {
+      symbol = "−";
+      if (b > a) [a, b] = [b, a];
+      answer = a - b;
+    } else if (op === "multiplication") {
+      symbol = "×";
+      a = Math.floor(Math.random() * (difficulty === "easy" ? 12 : difficulty === "medium" ? 30 : 100)) + 1;
+      answer = a * b;
+    } else {
+      symbol = "÷";
+      answer = Math.floor(Math.random() * (difficulty === "easy" ? 12 : difficulty === "medium" ? 30 : 100)) + 1;
+      a = answer * b;
+    }
+
+    return { a, b, symbol, answer, done: false };
+  });
+
+  practiceCorrect = 0;
+  practiceAnswered = 0;
+  renderPracticeQuestions();
+}
+
+function renderPracticeQuestions() {
+  practiceQuestions.innerHTML = "";
+
+  practiceItems.forEach((item, index) => {
+    const card = document.createElement("div");
+    card.className = "practice-question";
+
+    const heading = document.createElement("h3");
+    heading.textContent = `Question ${index + 1}: ${item.a} ${item.symbol} ${item.b} = ?`;
+
+    const input = document.createElement("input");
+    input.type = "number";
+    input.className = "practice-answer";
+    input.placeholder = "Type your answer";
+    input.setAttribute("aria-label", `Answer for question ${index + 1}`);
+
+    const check = document.createElement("button");
+    check.type = "button";
+    check.className = "challenge-btn";
+    check.textContent = "Check Answer";
+
+    const feedback = document.createElement("p");
+    feedback.className = "practice-feedback";
+    feedback.setAttribute("aria-live", "polite");
+
+    check.addEventListener("click", () => {
+      if (item.done) return;
+
+      if (input.value.trim() === "") {
+        feedback.textContent = "Enter your answer first.";
+        return;
+      }
+
+      item.done = true;
+      practiceAnswered++;
+
+      if (Number(input.value) === item.answer) {
+        practiceCorrect++;
+        feedback.textContent = "Correct! Great work! ✓";
+      } else {
+        feedback.textContent = `Not quite. The correct answer is ${item.answer}.`;
+      }
+
+      input.disabled = true;
+      check.disabled = true;
+      practiceScore.textContent =
+        `Score: ${practiceCorrect}/${practiceAnswered} answered · ${practiceItems.length - practiceAnswered} remaining`;
+
+      if (practiceAnswered === practiceItems.length) {
+        practiceScore.textContent =
+          `Finished! You scored ${practiceCorrect} out of ${practiceItems.length}. Generate another set to practise again!`;
+      }
+    });
+
+    input.addEventListener("keydown", event => {
+      if (event.key === "Enter") check.click();
+    });
+
+    card.append(heading, input, check, feedback);
+    practiceQuestions.appendChild(card);
+  });
+
+  practiceScore.textContent = "New questions ready! Answer all five to see your score.";
+}
+
+generatePractice.addEventListener("click", makePracticeQuestions);
+makePracticeQuestions();
